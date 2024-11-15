@@ -53,11 +53,7 @@ const Herocard = ({ book, numbering }: HeroCardProps) => {
                     {g}
                   </span>
                 ))
-<<<<<<< HEAD
                 .slice(0, 3)}
-=======
-                .slice(1)}
->>>>>>> aac2d59513dc7d438eef6c126e5a212b2a864562
             </div>
             <div className="flex flex-row items-center gap-1 text-zinc-400">
               <FaRegClock />

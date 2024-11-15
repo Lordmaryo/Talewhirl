@@ -1,8 +1,4 @@
 "use client";
-<<<<<<< HEAD
-=======
-import React, { useEffect, useState } from "react";
->>>>>>> aac2d59513dc7d438eef6c126e5a212b2a864562
 import Button from "./Button";
 import GenreSelector from "../utilities/GenreSelector";
 import { Book } from "../api/ApiServices";
