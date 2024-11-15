@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React, { useState } from "react";
-=======
-import React, { useEffect, useState } from "react";
->>>>>>> aac2d59513dc7d438eef6c126e5a212b2a864562
 import axios from "axios";
 import LoginPage from "./LoginPage";
 import Image from "next/image";
@@ -59,20 +55,6 @@ const SignUpPage = () => {
     }
   };
 
-<<<<<<< HEAD
-=======
-  useEffect(() => {
-    if (!closePopUp) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-    return () => {
-      document.body.classList.remove("overflow-hidden");
-    };
-  }, [closePopUp]);
-
->>>>>>> aac2d59513dc7d438eef6c126e5a212b2a864562
   if (closePopUp) return null;
   if (loginPage) return <LoginPage />;
   if (signupSucess) return <ActivateAccount />;
@@ -80,19 +62,12 @@ const SignUpPage = () => {
   return (
     <>
       <div
-<<<<<<< HEAD
         className="z-20 fixed w-full h-full bg-[#00000075]"
         onClick={() => setClosePopUp(!closePopUp)}
       />
       <div className="z-20 flex flex-row bg-white rounded-md sm:max-w-[420px] 
       w-[86%] md:max-w-[680px] h-[565px] text-black fixed top-1/2 left-1/2 
       transform -translate-x-1/2 -translate-y-1/2">
-=======
-        className="z-20 absolute w-full h-full bg-[#00000075]"
-        onClick={() => setClosePopUp(!closePopUp)}
-      />
-      <div className="z-20 flex flex-row bg-white rounded-md sm:max-w-[420px] w-[86%] md:max-w-[680px] h-[565px] text-black absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
->>>>>>> aac2d59513dc7d438eef6c126e5a212b2a864562
         <Image
           src={signUpBg}
           className="hidden md:block object-cover rounded-l-md"
