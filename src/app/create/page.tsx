@@ -6,10 +6,6 @@ import axios from "axios";
 import { baseApi } from "../api/baseApi";
 import { useRouter } from "next/navigation";
 import { toast, ToastContainer } from "react-toastify";
-<<<<<<< HEAD
-=======
-import { SavedBookResponse } from "../api/ApiServices";
->>>>>>> aac2d59513dc7d438eef6c126e5a212b2a864562
 import "react-toastify/dist/ReactToastify.css";
 
 const CreatePage = () => {
