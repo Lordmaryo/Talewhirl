@@ -70,10 +70,7 @@ const EditProfileForm = ({
       if (await handleForm()) {
         await uploadProfile();
         await uploadBackground();
-<<<<<<< HEAD
         location.reload();
-=======
->>>>>>> aac2d59513dc7d438eef6c126e5a212b2a864562
         setClose(true);
         setSucess(true); // this displays toast notification in the parent component
       }
