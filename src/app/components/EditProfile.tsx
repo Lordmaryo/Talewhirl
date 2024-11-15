@@ -165,6 +165,6 @@ const EditProfile = ({ currentUserId, setSucess }: CurrentUserIdProp) => {
       />
     </div>
   );
-};
+}; 
 
 export default EditProfile;
