@@ -145,7 +145,7 @@ const EditBookPage = ({ params }: EditBookPageProps) => {
         newestOnTop
       />
       <form className="py-20 px-4" onSubmit={handleSubmit}>
-        <div className="flex flex-row justify-between items-center sticky top-16 backdrop-blur-md">
+        <div className="py-2 flex flex-row justify-between items-center sticky top-16 backdrop-blur-md">
           <h1 className="text-xl font-bold ">Edit</h1>
           <div className="flex flex-row items-center gap-4 text-sm">
             <button

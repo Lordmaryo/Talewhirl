@@ -8,6 +8,7 @@ import NavItem from "./NavItem";
 import HomeBodyLoader from "../loaders/HomeBodyLoader";
 import { checkAuthenication } from "../token/Token";
 import { baseApi } from "../api/baseApi";
+import Spinner from "../loaders/Spinner";
 
 const HomeBody = () => {
   const [bookResponse, setBookResponse] = useState<ResponseProps | null>(null);
@@ -36,7 +37,7 @@ const HomeBody = () => {
     }
   };
 
-  if (!bookResponse) return <HomeBodyLoader />;
+  if (!bookResponse) return <Spinner />;
 
   return (
     <div className="relative py-6 px-4 md:px-6">
