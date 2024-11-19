@@ -3,7 +3,6 @@ import { Book, deleteBook } from "../api/ApiServices";
 import Image from "next/image";
 import Link from "next/link";
 import { timeAgo } from "../utilities/Helpers";
-import { useRouter } from "next/navigation";
 import Button from "./Button";
 
 type BookResultsCardProps = {
