@@ -29,7 +29,6 @@ const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const router = useRouter();
 
-
   useEffect(() => {
     const fetchData = async () => {
       checkAuthAndSetToken(getToken, setIsAuthenticated, setTokenData);
@@ -60,6 +59,8 @@ const Header = () => {
           <SideBar
             currentUserId={currentUserId}
             setToggleMenu={setToggleMenu}
+            setIsLoginCliked={setIsLoginCliked}
+            isLoginClicked={isLoginClicked}
           />
         </>
       )}
@@ -147,7 +148,7 @@ const Header = () => {
               if (isAuthenticated) {
                 router.push(`/profile/${tokenData?.id}`);
               } else {
-                return <LoginPage />;
+                setIsLoginCliked(!isLoginClicked);
               }
             }}
           >

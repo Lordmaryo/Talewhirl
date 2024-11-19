@@ -2,15 +2,22 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import GenresMenu from "./GenresMenu";
-import { IoIosLogOut } from "react-icons/io";
+import { IoIosLogIn, IoIosLogOut } from "react-icons/io";
 import { checkAuthenication, removeToken } from "../token/Token";
 
 type SideBarProps = {
   setToggleMenu: (toggleMenu: boolean) => void;
   currentUserId: number | undefined;
+  isLoginClicked: boolean;
+  setIsLoginCliked: (isLoginClicked: boolean) => void;
 };
 
-const SideBar = ({ setToggleMenu, currentUserId }: SideBarProps) => {
+const SideBar = ({
+  setToggleMenu,
+  currentUserId,
+  setIsLoginCliked,
+  isLoginClicked
+}: SideBarProps) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
@@ -66,13 +73,6 @@ const SideBar = ({ setToggleMenu, currentUserId }: SideBarProps) => {
                 >
                   <li>Drafts</li>
                 </Link>
-                {/* <Link
-                  onClick={() => setToggleMenu(false)}
-                  href={"/bookmarked"}
-                  className="hover:bg-[#383838] py-2 px-4"
-                >
-                  <li>Bookmarked</li>
-                </Link> */}
               </>
             )}
             <Link
@@ -87,13 +87,24 @@ const SideBar = ({ setToggleMenu, currentUserId }: SideBarProps) => {
             <h2 className="font-bold opacity-75">Genres</h2>
             <GenresMenu setToggleMenu={setToggleMenu} />
           </div>
-          {isAuthenticated && (
+          {isAuthenticated ? (
             <button
               onClick={() => removeToken()}
               className="hover:bg-[#383838] py-2 px-4 flex flex-row items-center gap-x-2"
             >
               <IoIosLogOut />
               <span>Logout</span>
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                setIsLoginCliked(!isLoginClicked);
+                setToggleMenu(false);
+              }}
+              className="hover:bg-[#383838] py-2 px-4 flex flex-row items-center gap-x-2"
+            >
+              <IoIosLogIn />
+              <span>Login</span>
             </button>
           )}
         </div>
