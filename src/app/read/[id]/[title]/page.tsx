@@ -86,7 +86,7 @@ const ReadBook = ({ params }: ReadBookProps) => {
   if (!bookData || !currentChapter) return <Spinner />;
   return (
     <div className="pt-16">
-      <div className="z-10 sticky top-16 backdrop-blur-md flex flex-row justify-between px-4 sm:px-10 items-center">
+      <div className="py-2 z-10 sticky top-16 backdrop-blur-md flex flex-row justify-between px-4 sm:px-10 items-center">
         <button
           className={
             !isFirstChap
@@ -114,11 +114,13 @@ const ReadBook = ({ params }: ReadBookProps) => {
         <h1 className="text-2xl md:3xl lg:text-4xl font-bold">
           Chapter {currentChapter?.chapterNum}: {currentChapter?.chapterName}
         </h1>
-        <div className="py-2 flex flex-row gap-4 items-center">
-          <div className="w-full h-px bg-zinc-500"></div>
-          <span className="text-zinc-500">Epigraph</span>
-          <div className="w-full h-px bg-zinc-500"></div>
-        </div>
+        {currentChapter.epigraph.length > 0 && (
+          <div className="py-2 flex flex-row gap-4 items-center">
+            <div className="w-full h-px bg-zinc-500" />
+            <span className="text-zinc-500">Epigraph</span>
+            <div className="w-full h-px bg-zinc-500" />
+          </div>
+        )}
         <p className="text-center text-sm italic font-semibold pb-6 text-zinc-400">
           {currentChapter.epigraph}
         </p>

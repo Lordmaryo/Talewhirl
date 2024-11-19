@@ -56,10 +56,10 @@ const LoginPage = () => {
     };
   }, [closePopUp]);
 
-  const handleDemoLogin = () => {
-    setEmail("johndoe@mail.com");
-    setPassword("password");
-  };
+  // const handleDemoLogin = () => {
+  //   setEmail("johndoe@mail.com");
+  //   setPassword("password");
+  // };
 
   if (closePopUp) return null;
   if (registerPage) return <SignUpPage />;
@@ -141,13 +141,13 @@ const LoginPage = () => {
                 <span>Remember me</span>
               </label>
 
-              <button
+              {/* <button
                 type="button"
                 className="text-[#256325]"
-                onClick={handleDemoLogin}
+                // onClick={handleDemoLogin}
               >
                 Demo Login
-              </button>
+              </button> */}
             </div>
             <button
               type="submit"
