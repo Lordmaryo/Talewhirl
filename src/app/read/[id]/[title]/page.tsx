@@ -96,7 +96,7 @@ const ReadBook = ({ params }: ReadBookProps) => {
           onClick={handlePreviousChap}
         >
           <FaArrowLeft size={20} />
-          <span className="font-bold">Previous chapter</span>
+          <span className="font-bold">Previous</span>
         </button>
         <button
           onClick={handleNextChap}
@@ -106,7 +106,7 @@ const ReadBook = ({ params }: ReadBookProps) => {
               : "invisible"
           }
         >
-          <span className="font-bold">Next chapter</span>
+          <span className="font-bold">Next</span>
           <FaArrowRight size={20} />
         </button>
       </div>
