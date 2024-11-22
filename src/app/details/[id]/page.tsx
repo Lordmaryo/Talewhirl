@@ -10,6 +10,7 @@ import Spinner from "@/app/loaders/Spinner";
 import Feedback from "@/app/components/Feedback";
 import {
   averageReadTime,
+  formatViews,
   interval,
   timeAgo,
   truncateWord,
@@ -18,6 +19,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { checkAuthenication } from "@/app/token/Token";
 import { useRouter } from "next/navigation";
+import { RxEyeOpen } from "react-icons/rx";
 
 export type PageProps = {
   params: { id: string };
@@ -63,7 +65,8 @@ const Details = ({ params }: PageProps) => {
             className="bg-red-500"
             label="Yes, delete"
             onClick={() => {
-              if (isAuthenticated) { // not required just to satisfy eslint
+              if (isAuthenticated) {
+                // not required just to satisfy eslint
                 deleteBook(book?.id);
               }
               setClickedDelete(!clickedDelete);
@@ -126,8 +129,8 @@ const Details = ({ params }: PageProps) => {
           items-center gap-x-2 font-bold"
             >
               <div className="flex flex-row items-center gap-1 border-r-2 pr-4">
-                <span>{!book?.rate ? "0.0" : book.rate}</span>
-                <FaStar />
+                <RxEyeOpen />
+                <span>{formatViews(book.readCount)}</span>
               </div>
               <div className="flex flex-row items-center gap-1 px-2">
                 <FaRegClock />

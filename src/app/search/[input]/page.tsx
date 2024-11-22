@@ -2,6 +2,7 @@
 import { ResponseProps } from "@/app/api/ApiServices";
 import { baseApi } from "@/app/api/baseApi";
 import BookResultsCard from "@/app/components/BookResultsCard";
+import Spinner from "@/app/loaders/Spinner";
 import React, { useEffect, useState } from "react";
 
 type SearchPageProps = {
@@ -32,7 +33,8 @@ const SearchPage = ({ params }: SearchPageProps) => {
       console.error(`Error searching ${readableSearchedWord}`, error);
     }
   };
-
+  
+  if (!searchResponse?.content) return <Spinner />;
   return (
     <div className="py-16 px-4">
       <h2 className="py-5 font-bold text-xl text-zinc-400">

@@ -42,7 +42,7 @@ const HomeBody = () => {
     <div className="relative py-6 px-4 md:px-6">
       {isAuthenticated && (
         <>
-          <h2 className="font-bold sm:text-xl mb-2">Recommended for you</h2>
+          <h2 className="font-bold sm:text-xl mb-2">Explore</h2>
           <Splide
             options={{
               perPage: 5,
@@ -67,7 +67,7 @@ const HomeBody = () => {
       )}
       <div className="gap-y-6 lg:px-5 flex flex-wrap md:flex-nowrap flex-col-reverse lg:flex-row justify-between mt-6">
         <div>
-          <h2 className="font-bold sm:text-xl mb-2">Explore</h2>
+          {/* <h2 className="font-bold sm:text-xl mb-2">Explore</h2> */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {bookResponse.content.map((book) => (
               <div className="max-w-52" key={book.id}>

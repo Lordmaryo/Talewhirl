@@ -4,13 +4,7 @@ import { FaRegClock, FaStar } from "react-icons/fa";
 import { FiBookOpen } from "react-icons/fi";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Link from "next/link";
-import {
-  averageReadTime,
-  formatViews,
-  interval,
-  truncateWord,
-} from "../utilities/Helpers";
-import { RxEyeOpen } from "react-icons/rx";
+import { averageReadTime, interval, truncateWord } from "../utilities/Helpers";
 
 type HeroCardProps = {
   book: Book;
@@ -62,10 +56,6 @@ const Herocard = ({ book, numbering }: HeroCardProps) => {
             <div className="flex flex-row items-center gap-1 text-zinc-400">
               <FaStar />
               <span>{!book.rate ? "0.0" : book.rate}</span>
-            </div>
-            <div className="flex flex-row items-center gap-1 text-zinc-400">
-              <RxEyeOpen />
-              <span>{formatViews(book.readCount)}</span>
             </div>
           </div>
           <p className="pt-2 hidden sm:block md:text-base text-sm">
