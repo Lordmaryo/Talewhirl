@@ -56,7 +56,7 @@ const DraftCard = ({ book }: BookResultsCardProps) => {
       <div className="w-full py-2 flex flex-row flex-wrap gap-4 justify-between">
         <div className="flex flex-row gap-x-3">
           <Image
-            src={`data:image/jpeg;base64,${book?.cover}`}
+            src={book?.cover || ""}
             className="w-16 h-24 md:w-28 md:h-40 object-cover rounded-md"
             width={100}
             height={100}

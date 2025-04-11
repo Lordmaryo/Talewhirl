@@ -84,7 +84,7 @@ const Details = ({ params }: PageProps) => {
       <div className="pt-20 px-6 md:px-12 pb-10">
         <div className="flex flex-row gap-x-4">
           <Image
-            src={`data:image/jpeg;base64,${book?.cover}`}
+            src={book?.cover || ""}
             className="xl:h-[300px] lg:h-[260px] lg:w-[210px] md:h-[270px] 
           md:w-[190px] sm:h-[230px] sm:w-[170px] rounded-md 
           object-cover h-[180px] w-[100px]"

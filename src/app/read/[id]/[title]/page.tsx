@@ -128,7 +128,7 @@ const ReadBook = ({ params }: ReadBookProps) => {
       <div className="px-4 md:px-10 flex gap-6 justify-between relative">
         <div className="hidden md:block w-[40%] sticky top-28 h-screen my-4">
           <Image
-            src={`data:image/jpeg;base64,${bookData?.cover}`}
+            src={bookData?.cover || ""}
             className="lg:w-56 lg:h-80 w-52 h-72 object-cover rounded-md"
             alt="book cover"
             width={100}

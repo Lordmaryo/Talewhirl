@@ -15,7 +15,7 @@ const Card = ({ book }: CardProps) => {
     <div className="relative">
       <Link href={"/details/" + book.id}>
         <Image
-          src={`data:image/jpeg;base64,${book.cover}`}
+          src={book.cover || ""}
           className="h-[250px] w-full object-cover rounded-md"
           width={100}
           height={100}

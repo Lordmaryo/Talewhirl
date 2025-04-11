@@ -155,9 +155,7 @@ const Header = () => {
             <Image
               className="h-6 w-6 rounded-full"
               src={
-                !userData?.profilePic
-                  ? defaultProfile
-                  : `data:image/jpeg;base64,${userData?.profilePic}`
+                !userData?.profilePic ? defaultProfile : userData?.profilePic
               }
               width={100}
               height={100}

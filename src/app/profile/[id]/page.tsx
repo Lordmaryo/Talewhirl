@@ -91,22 +91,14 @@ const Profile = ({ params }: PageProps) => {
       <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
       <div className="pt-16 relative">
         <Image
-          src={
-            !userData.backgroundPic
-              ? defaultbg
-              : `data:image/jpeg;base64,${userData?.backgroundPic}`
-          }
+          src={!userData.backgroundPic ? defaultbg : userData?.backgroundPic}
           width={100}
           height={100}
           alt=""
           className="w-full max-h-36 object-cover"
         />
         <Image
-          src={
-            !userData.profilePic
-              ? defaultProfile
-              : `data:image/jpeg;base64,${userData?.profilePic}`
-          }
+          src={!userData.profilePic ? defaultProfile : userData?.profilePic}
           width={100}
           height={100}
           className="w-16 h-16 sm:w-24 sm:h-24 object-cover rounded-full absolute top-40 sm:left-14 left-6"
@@ -116,9 +108,7 @@ const Profile = ({ params }: PageProps) => {
           <span className="font-bold">
             {userData?.firstname + " " + userData?.lastname}
           </span>
-          <span className="opacity-50">
-            @{userData.generatedUsername}
-          </span>
+          <span className="opacity-50">@{userData.generatedUsername}</span>
           <span className="pt-3">{userData.bio || "No bio yet"}</span>
           <span className="opacity-50 py-2">
             Joined {formatDate(userData.createdDate)}

@@ -20,7 +20,7 @@ const Herocard = ({ book, numbering }: HeroCardProps) => {
       <Image
         className="w-full object-cover md:h-screen"
         priority={true}
-        src={`data:image/jpeg;base64,${book.backgroundCover}`}
+        src={book.backgroundCover || ""}
         width={100}
         height={100}
         alt="book backgroud cover"

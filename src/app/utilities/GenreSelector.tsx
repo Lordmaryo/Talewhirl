@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import allGenresData from "../data/genres.json";
 
 type GenreSelectorProps = {
@@ -18,7 +19,7 @@ const GenreSelector = ({ setGenres, genres }: GenreSelectorProps) => {
     <div>
       <select
         className="p-2 bg-black text-white"
-        value=""
+        disabled={genres.length === 5}
         onChange={handleSelectChange}
       >
         <option value="">Select Genres</option>

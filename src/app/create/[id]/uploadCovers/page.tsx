@@ -112,7 +112,7 @@ const UploadCovers = ({ params }: PageProps) => {
                 ? URL.createObjectURL(backgroundCoverFile)
                 : !book?.backgroundCover
                 ? defaultbg
-                : `data:image/jpeg;base64,${book?.backgroundCover}`
+                : book?.backgroundCover
             }
             width={100}
             height={100}
@@ -144,7 +144,7 @@ const UploadCovers = ({ params }: PageProps) => {
                 ? URL.createObjectURL(bookCoverFile)
                 : !book?.cover
                 ? defaultCover
-                : `data:image/jpeg;base64,${book?.cover}`
+                : book?.cover
             }
             width={100}
             height={100}

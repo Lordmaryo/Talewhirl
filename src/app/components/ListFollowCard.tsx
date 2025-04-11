@@ -18,11 +18,7 @@ const ListFollowCard = ({ followId }: FollowIdProp) => {
     <div className="flex justify-between items-center my-4">
       <div className="flex flex-row gap-x-2">
         <Image
-          src={
-            !userData?.profilePic
-              ? defaultProfile
-              : `data:image/jpeg;base64,${userData?.profilePic}`
-          }
+          src={!userData?.profilePic ? defaultProfile : userData?.profilePic}
           className="w-10 h-10 rounded-full"
           alt="profile picture"
           width={100}

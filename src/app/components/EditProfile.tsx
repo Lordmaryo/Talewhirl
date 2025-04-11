@@ -67,7 +67,7 @@ const EditProfile = ({ currentUserId, setSucess }: CurrentUserIdProp) => {
         console.error(err.response.data.validationErrors);
       }
     }
-  }; 
+  };
 
   const [close, setClose] = useState(false);
 
@@ -97,7 +97,7 @@ const EditProfile = ({ currentUserId, setSucess }: CurrentUserIdProp) => {
                 ? URL.createObjectURL(backgroundFile)
                 : !userData.backgroundPic
                 ? defaultbg
-                : `data:image/jpeg;base64,${userData?.backgroundPic}`
+                : userData?.backgroundPic
             }
             width={100}
             height={100}
@@ -129,7 +129,7 @@ const EditProfile = ({ currentUserId, setSucess }: CurrentUserIdProp) => {
                 ? URL.createObjectURL(profileFile)
                 : !userData.profilePic
                 ? defaultProfile
-                : `data:image/jpeg;base64,${userData?.profilePic}`
+                : userData?.profilePic
             }
             width={100}
             height={100}
@@ -165,6 +165,6 @@ const EditProfile = ({ currentUserId, setSucess }: CurrentUserIdProp) => {
       />
     </div>
   );
-}; 
+};
 
 export default EditProfile;
