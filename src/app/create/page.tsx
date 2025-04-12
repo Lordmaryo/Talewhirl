@@ -126,7 +126,8 @@ const CreatePage = () => {
             </button>
             <button
               type="submit"
-              className="font-bold bg-green-700 py-2 px-3 rounded-lg hover:bg-green-600 transition-colors"
+              // disabled
+              className="disabled:opacity-45 font-bold bg-green-700 py-2 px-3 rounded-lg hover:bg-green-600 transition-colors"
             >
               Finnish
             </button>

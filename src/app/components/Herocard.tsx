@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { Book } from "../api/ApiServices";
 import { FaRegClock, FaStar } from "react-icons/fa";
-import { FiBookOpen } from "react-icons/fi";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { averageReadTime, interval, truncateWord } from "../utilities/Helpers";
+import { Button } from "@/components/ui/button";
 
 type HeroCardProps = {
   book: Book;
@@ -61,18 +61,15 @@ const Herocard = ({ book, numbering }: HeroCardProps) => {
           <p className="pt-2 hidden sm:block md:text-base text-sm">
             {truncateWord(book.synopsis, 100)}
           </p>
-          <div className="flex flex-row items-center gap-2 mt-4">
+          <div className="font-semibold flex flex-row items-center gap-2 mt-4">
             <Link href={`/read/${book.id}/${book.title.replace(/\s+/g, "-")}`}>
-              <button className="flex flex-row items-center gap-1 font-semibold hover:bg-[#ffffffba] transition-colors bg-white text-black sm:px-4 px-3 py-1 rounded-lg">
-                <FiBookOpen />
-                <span>Read now</span>
-              </button>
+              <Button variant={"secondary"}>Read now</Button>
             </Link>
             <Link href={"/details/" + book.id}>
-              <button className="flex flex-row items-center gap-1 font-semibold rounded-lg hover:bg-[#ffffff10] transition-colors text-white border py-1 px-2">
+              <Button variant={"outline"} className="bg-zinc hover:bg-[#0004] hover:text-white">
                 <span>Details</span>
-                <MdOutlineKeyboardArrowRight size={20} />
-              </button>
+                <ChevronRight size={20} />
+              </Button>
             </Link>
           </div>
         </div>
